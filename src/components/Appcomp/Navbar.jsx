@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 
 export default function Navbar(props) {
   return (
-    <div>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div> 
+        <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
   <div className="container-fluid">
     <a className="navbar-brand" href="/">{props.title}</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,27 +16,33 @@ export default function Navbar(props) {
           <a className="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/">{props.aboutText}</a>
+          <a className="nav-link active" href="/">{props.aboutText}About</a>
         </li>
           </ul>
-      <form className="d-flex" role="search">
+     {/* <form className="d-flex" role="search">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-       {/* <button className="btn btn-outline-success" type="submit">Search</button> */}
+       {/* <button className="btn btn-outline-success" type="submit">Search</button> 
         <button type="submit" className="btn btn-info">Search</button>
-      </form>
-    </div>
+      </form> */}
+       
+    <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`} >
+      <input className="form-check-input" onClick={props.toggleMode} type="checkbox" id="flexSwitchCheckDefault"/>
+      <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable DarkMode</label>
+      </div>
+      </div> 
   </div>
 </nav>
     </div>
   )
 }
 
-Navbar.propsTypes = {
-    title : PropTypes.string  
-    ,aboutText : PropTypes.string
-}
 
-Navbar.defaultProps = {
-    title: 'set title here',
-    aboutText: 'About text here'
-}
+// Navbar.propsTypes = {
+//     title : PropTypes.string  
+//     ,aboutText : PropTypes.string
+// }
+
+// Navbar.defaultProps = {
+//     title: 'set title here',
+//     aboutText: 'About'
+// }
