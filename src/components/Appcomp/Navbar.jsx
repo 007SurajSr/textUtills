@@ -1,5 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+//import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
+//import PropTypes from 'prop-types'
 
 export default function Navbar(props) {
   return (
@@ -16,14 +18,11 @@ export default function Navbar(props) {
           <a className="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link active" href="/">{props.aboutText}About</a>
+          <a className="nav-link active" href="/about">{props.aboutText}About</a>
+          
         </li>
           </ul>
-     {/* <form className="d-flex" role="search">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-       {/* <button className="btn btn-outline-success" type="submit">Search</button> 
-        <button type="submit" className="btn btn-info">Search</button>
-      </form> */}
+  
        
     <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`} >
       <input className="form-check-input" onClick={props.toggleMode} type="checkbox" id="flexSwitchCheckDefault"/>
@@ -31,7 +30,7 @@ export default function Navbar(props) {
       </div>
       <div className={`form-check form-switch text-${props.mode==='dark'?'light':'dark'}`} >
       <input className="form-check-input" onClick={props.toggleMode1} type="checkbox" id="flexSwitchCheckDefault"/>
-      <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable GreenMode</label>
+      <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable PinkMode</label>
       </div>
       </div> 
   </div>
